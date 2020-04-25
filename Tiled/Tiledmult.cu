@@ -1,18 +1,10 @@
-/******************************************************************************
- *cr
- *cr            (C) Copyright 2010 The Board of Trustees of the
- *cr                        University of Illinois
- *cr                         All Rights Reserved
- *cr
- ******************************************************************************/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "support.h"
 
-extern __host__ void basicSgemm(char transa, char transb, int m, int n, int k, float alpha, const float *A, int lda, const float *B, int ldb, float beta, float *C, int ldc);
+extern _host_ void basicSgemm(char transa, char transb, int m, int n, int k, float alpha, const float *A, int lda, const float *B, int ldb, float beta, float *C, int ldc);
 
-extern __global__ void matrixMultiplyShared(float *A, float *B, float *C,
+extern _global_ void matrixMultiplyShared(float *A, float *B, float *C,
                                      int numARows, int numAColumns,
                                      int numBRows, int numBColumns,
                                      int numCRows, int numCColumns);
