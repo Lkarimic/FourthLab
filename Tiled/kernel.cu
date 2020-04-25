@@ -86,7 +86,7 @@ void basicSgemm(char transa, char transb, int m, int n, int k, float alpha, cons
     //INSERT CODE HERE to define thread blocks and layout
 
     // Invoke CUDA kernel -----------------------------------------------------
-mysgemm<<<dimGrid, dimBlock>>>(m, n, k, A, B, C);
+//mysgemm<<<dimGrid, dimBlock>>>(m, n, k, A, B, C);
     //INSERT CODE HERE
 
 
