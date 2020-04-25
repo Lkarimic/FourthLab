@@ -11,6 +11,10 @@
 #include "support.h"
 
 extern __host__ void basicSgemm(char transa, char transb, int m, int n, int k, float alpha, const float *A, int lda, const float *B, int ldb, float beta, float *C, int ldc);
+extern __global__ void matrixMultiplyShared(float *A, float *B, float *C,
+                                     int numARows, int numAColumns,
+                                     int numBRows, int numBColumns,
+                                     int numCRows, int numCColumns)
 
 int main (int argc, char *argv[])
 {
