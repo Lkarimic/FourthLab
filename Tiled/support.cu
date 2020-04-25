@@ -28,8 +28,7 @@ startTime(&timer);
         sum += A[row*k + i]*B[i*n + col];
       }
       float relativeError = (sum - C[row*n + col])/sum;
-      stopTime(&timer);
-      printf("%f s\n", elapsedTime(timer));
+      
       if (relativeError > relativeTolerance
         || relativeError < -relativeTolerance) {
         printf("TEST FAILED\n\n");
@@ -37,6 +36,8 @@ startTime(&timer);
       }
     }
   }
+stopTime(&timer);
+printf("%f s\n", elapsedTime(timer));
   printf("TEST PASSED\n\n");
 
 }
