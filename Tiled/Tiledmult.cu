@@ -100,7 +100,7 @@ int main (int argc, char *argv[])
     printf("Launching kernel..."); fflush(stdout);
     startTime(&timer);
     const unsigned int BLOCK_SIZE = 16; // Use 16x16 thread block
-    dim3 dimGrid(ceil(n/(float)BLOCK_SIZE),(ceil(m/(float)BLOCK_SIZE)), 1 );
+    dim3 dimGrid(ceil(matBcol/(float)BLOCK_SIZE),(ceil(matArow/(float)BLOCK_SIZE)), 1 );
     dim3 dimBlock(BLOCK_SIZE, BLOCK_SIZE);
 
   matrixMultiplyShared<<<dimGrid, dimBlock>>>(A_d, B_d, C_d, matArow, matAcol,matBrow,matBcol,matArow, matBcol);
