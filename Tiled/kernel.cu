@@ -14,7 +14,7 @@ __global__ void matrixMultiplyShared(float *A, float *B, float *C,
                                      int numCRows, int numCColumns) {
   //@@ Insert code to implement matrix multiplication here
   //@@ You have to use shared memory for this MP
-  unsigned int TILE_WIDTH=16;
+ const unsigned int TILE_WIDTH=16;
   __shared__ float ds_A[TILE_WIDTH][TILE_WIDTH];
     __shared__ float ds_B[TILE_WIDTH][TILE_WIDTH];
     int bx = blockIdx.x, by = blockIdx.y,
